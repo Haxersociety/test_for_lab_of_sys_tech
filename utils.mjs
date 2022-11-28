@@ -19,15 +19,10 @@ function deserialized(string) {
             new_arr = new_arr.concat(n.slice(-1).repeat(+n.slice(0, -1)).split('').map(n => n.charCodeAt(0) - 33))
         else
             new_arr.push(n.charCodeAt(0) - 33)
-
     })
     return new_arr
 }
 
-function getCoefficient(array) {
-    let str = array.join(' ')
-    let ser_str = serialized(array)
-    return 1 - ser_str.length / str.length
-}
+const getCoefficient = (arr) => 1 - serialized(arr).length / arr.join(' ').length
 
 export default {serialized, deserialized, getCoefficient}

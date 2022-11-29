@@ -22,7 +22,7 @@ const test = (arr, name) => {
 const test_short_50 = () => {
     let test_arr = []
     for (let i = 0; i < 50; i++)
-        test_arr.push(Math.ceil(Math.random() * 9))
+        test_arr.push(Math.floor(Math.random() * 9))
     return test_arr
 }
 
@@ -32,19 +32,21 @@ const test_50 = () => {
         test_arr.push(Math.ceil(Math.random() * 300))
     return test_arr
 }
+
 const test_100 = () => {
     let test_arr = []
-
     for (let i = 0; i < 100; i++)
         test_arr.push(Math.ceil(Math.random() * 300))
     return test_arr
 }
+
 const test_500 = () => {
     let test_arr = []
     for (let i = 0; i < 500; i++)
         test_arr.push(Math.ceil(Math.random() * 300))
     return test_arr
 }
+
 const test_1000 = () => {
     let test_arr = []
     for (let i = 0; i < 1000; i++)
@@ -68,21 +70,15 @@ const test_2_signs = () => {
 
 const test_3_signs = () => {
     let test_arr = []
-
     for (let i = 100; i <= 300; i++)
         test_arr.push(i)
-
     return test_arr
 }
 
 const test_x3_nums = () => {
     let test_arr = []
-
-    for (let i = 1; i <= 300; i++) {
-        test_arr.push(i)
-        test_arr.push(i)
-        test_arr.push(i)
-    }
+    for (let i = 1; i <= 300; i++)
+        test_arr = test_arr.concat([i, i, i])
     return test_arr
 }
 
